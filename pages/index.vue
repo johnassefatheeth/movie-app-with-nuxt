@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="text-gray-400">
+        <Navbar/>
         ahoy
     </div>
 </template>
