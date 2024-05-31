@@ -5,7 +5,7 @@
         :centeredSlides="true"
         :modules="modules"
         :autoplay="{
-      delay: 2500,
+      delay: 5000,
       disableOnInteraction: false,
     }"
       >
@@ -21,10 +21,10 @@
         <!-- ... -->
       </swiper>
     <div class="absolute top-0 z-10 w-full h-screen bg-opacity-25 bg-black  flex justify-center items-center">
-       <div class="text-white font-extrabold text-6xl text-center w-[400px]">
+       <div class="mr-52 text-white font-extrabold text-8xl text-center w-1/2 h-full flex justify-center items-center backdrop-blur-sm">
             FIND WHAT YOU MISSING ON
        </div>
-       <button class="w-[100px]">
+       <button class="w-[200px] h-[50px] bg-orange-700 rounded-full font-bold text-white lg:text-2xl lg:w-[300px] lg:h-[80px]">
         EXPLORE
        </button>
 
