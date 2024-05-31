@@ -5,27 +5,21 @@
                 Recent
                 <hr class="m-4 w-full border-1 border-white mt-4">
             </div>
-            <div class="w-full  px-14 ">
-                <Movie/><Movie/><Movie/>
-                <Movie/><Movie/>
-            </div>
+            <Lister/>
+
             <div class="flex w-full  p-2">         
                 Ongoing
                 <hr class="m-4 w-full border-1 border-white mt-4">
             </div>
-            <div class="w-full  px-14 ">
-                <Movie/><Movie/><Movie/>
-                <Movie/><Movie/>
-            </div>
+            
+            <Lister/>
 
             <div class="flex w-full  p-2">         
                 Top Rated
                 <hr class="m-4 w-full border-1 border-white mt-4">
             </div>
-            <div class="w-full  px-14 ">
-                <Movie/><Movie/><Movie/>
-                <Movie/><Movie/>
-            </div>
+           
+            <Lister/>
 
         </div>
 </template>
