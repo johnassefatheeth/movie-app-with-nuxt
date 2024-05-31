@@ -4,6 +4,7 @@
         <Home/>
         
         <MoviesList/>
+        <SeriesList/>
         
         
     </div>
