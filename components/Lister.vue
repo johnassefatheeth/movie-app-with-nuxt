@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full px-14">
+  <div class="w-full px-14 ease-in duration-500">
     <div v-if="data === null">Loading...</div>
     <div v-else class="flex flex-wrap">
       <!-- Handle the case for the 'latest' filter type -->
