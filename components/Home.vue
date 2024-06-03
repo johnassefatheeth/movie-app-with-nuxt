@@ -5,7 +5,7 @@
         :centeredSlides="true"
         :modules="modules"
         :autoplay="{
-      delay: 5000,
+      delay: 3000,
       disableOnInteraction: false,
     }"
       >
