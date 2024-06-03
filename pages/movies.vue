@@ -1,11 +1,11 @@
 <template>
     <div class="flex">
       <!-- Sidebar -->
-      <div class="p-4 h-screen w-[300px]  bg-blue-900">
-        <h1 class="text-2xl font-semibold mb-4 text-white">Discover Movies</h1>
+      <div class="p-4 h-screen w-[300px] fixed text-white bg-blue-900">
+        <h1 class="text-2xl font-semibold mb-4">Discover Movies</h1>
         <div class="m-4">
-          <label for="sortBy" class="m-2 text-white">Sort By:</label>
-          <select v-model="sortBy" id="sortBy" class="border rounded px-2 py-1">
+          <label for="sortBy" class="m-2">Sort By:</label>
+          <select v-model="sortBy" id="sortBy" class="border rounded px-2 py-1 bg-slate-600">
             <option value="popularity.desc">Popularity</option>
             <option value="release_date.desc">Release Date</option>
             <option value="vote_average.desc">Rating</option>
@@ -16,25 +16,25 @@
           </select>
         </div>
         <div class="mb-4">
-          <label for="minVote" class="mr-2 text-white">Minimum Vote Average:</label>
-          <input v-model="minVote" type="number" id="minVote" class="border rounded px-2 py-1">
+          <label for="minVote" class="mr-2">Minimum Vote Average:</label>
+          <input v-model="minVote" type="number" id="minVote" class="border rounded px-2 py-1 bg-slate-600">
         </div>
         <div class="mb-4">
-          <label for="genre" class="mr-2 text-white">Genre:</label>
-          <select v-model="genre" id="genre" class="border rounded px-2 py-1">
+          <label for="genre" class="mr-2">Genre:</label>
+          <select v-model="genre" id="genre" class="border rounded px-2 py-1 bg-slate-600">
             <option value="" disabled selected>Select Genre</option>
             <option v-for="genre in genres" :key="genre.id" :value="genre.id">{{ genre.name }}</option>
           </select>
         </div>
         <div class="mb-4">
-          <label for="releaseYear" class="mr-2 text-white">Release Year:</label>
-          <input v-model="releaseYear" type="number" id="releaseYear" class="border rounded px-2 py-1">
+          <label for="releaseYear" class="mr-2">Release Year:</label>
+          <input v-model="releaseYear" type="number" id="releaseYear" class="border rounded px-2 py-1 bg-slate-600">
         </div>
         <button @click="fetchMovies" class="bg-blue-500 text-white py-2 px-4 rounded">Fetch Movies</button>
       </div>
   
       <!-- Main Content -->
-      <div class="container mx-auto px-4 py-8">
+      <div class="container mx-auto px-4 py-8 ml-[300px]">
         <h2 class="text-3xl font-bold mb-4">Results:</h2>
         <div v-if="movies.length > 0">
           <div v-for="movie in movies" :key="movie.id" class="mb-4">
