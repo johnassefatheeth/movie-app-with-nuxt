@@ -1,7 +1,7 @@
 <template>
-    <div class="flex">
+    <div class="flex bg-gradient-to-r from-gray-900 to-black min-h-screen">
       <!-- Sidebar -->
-      <div class="p-4 h-screen w-[300px] fixed text-white bg-blue-900">
+      <div class="p-4 h-screen w-[300px] fixed text-white bg-gradient-to-r from-gray-900 to-black ">
         <h1 class="text-2xl font-semibold mb-4">Discover Movies</h1>
         <div class="m-4">
           <label for="sortBy" class="m-2">Sort By:</label>
@@ -15,7 +15,7 @@
             <!-- Add more options as needed -->
           </select>
         </div>
-        <div class="mb-4">
+        <div class="mb-4 ">
           <label for="minVote" class="mr-2">Minimum Vote Average:</label>
           <input v-model="minVote" type="number" id="minVote" class="border rounded px-2 py-1 bg-slate-600">
         </div>
@@ -30,20 +30,15 @@
           <label for="releaseYear" class="mr-2">Release Year:</label>
           <input v-model="releaseYear" type="number" id="releaseYear" class="border rounded px-2 py-1 bg-slate-600">
         </div>
-        <button @click="fetchMovies" class="bg-blue-500 text-white py-2 px-4 rounded">Fetch Movies</button>
       </div>
   
       <!-- Main Content -->
-      <div class="container mx-auto px-4 py-8 ml-[300px]">
+      <div class="container mx-auto px-4 py-8 ml-[300px]  text-white">
         <h2 class="text-3xl font-bold mb-4">Results:</h2>
-        <div v-if="movies.length > 0">
+        <div v-if="movies.length > 0" class="flex flex-wrap">
           <div v-for="movie in movies" :key="movie.id" class="mb-4">
             <img :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" class="w-[200px] h-auto mr-2 rounded">
-            <div>
-              <h3 class="text-lg font-bold">{{ movie.title }}</h3>
-              <p>{{ movie.overview }}</p>
             </div>
-          </div>
         </div>
         <div v-else>No results found.</div>
       </div>
