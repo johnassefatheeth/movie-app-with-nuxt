@@ -35,7 +35,8 @@
         <h2 class="text-3xl font-bold mb-4">Results:</h2>
         <div v-if="series.length > 0" class="flex flex-wrap">
           <div v-for="serie in series" :key="serie.id" class="mb-4">
-            <!-- <img :src="'https://image.tmdb.org/t/p/w500' + serie.poster_path" class="w-[200px] h-auto mr-2 rounded"> -->
+            <!-- <img :src="'https://image.tmdb.org/t/p/w500' + " class="w-[200px] h-auto mr-2 rounded"> -->
+            <MovieCard :imagepath="serie.poster_path" :movieRating="serie.vote_average" :overview="serie.overview"/>
           </div>
         </div>
         <div v-else>No results found.</div>
