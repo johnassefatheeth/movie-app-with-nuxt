@@ -5,17 +5,21 @@
       <!-- Handle the case for the 'latest' filter type -->
       <div v-if="props.filterType === 'latest'" class="relative bg-black flex-shrink-0 m-2 hover-wrapper">
         <img :src="`https://image.tmdb.org/t/p/w500${data.poster_path}`" class="w-[200px] transition-opacity duration-300 ease-in-out hover:opacity-40">
-        <div class="absolute top-0 right-0 bg-red-600 text-white p-1 text-sm opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out">{{ data.vote_average }}</div>
-        <div class="absolute bottom-0 left-0 right-0 p-2 text-white text-sm opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out bg-black bg-opacity-50">
-          {{ data.overview }}
+        <div class="absolute top-0 right-0 bg-red-600 text-white p-1 text-sm opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out">
+          {{ data.vote_average.toFixed(1) }}
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-2 text-white text-sm opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out bg-black bg-opacity-50 description-box">
+          {{ truncatedOverview(data.overview) }}
         </div>
       </div>
       <!-- Handle the case for other filter types -->
       <div v-else v-for="(show, index) in displayedShows" :key="show.id" class="relative bg-black flex-shrink-0 m-2 hover-wrapper">
         <img :src="`https://image.tmdb.org/t/p/w500${show.poster_path}`" class="w-[200px] transition-opacity duration-300 ease-in-out hover:opacity-40">
-        <div class="absolute top-0 right-0 bg-red-600 text-white p-1 text-sm opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out">{{ show.vote_average }}</div>
-        <div class="absolute bottom-0 left-0 right-0 p-2 text-white text-sm opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out bg-black bg-opacity-50">
-          {{ show.overview }}
+        <div class="absolute top-0 right-0 bg-red-600 text-white p-1 text-sm opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out">
+          {{ show.vote_average.toFixed(1) }}
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-2 text-white text-sm opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out bg-black bg-opacity-50 description-box">
+          {{ truncatedOverview(show.overview) }}
         </div>
       </div>
     </div>
@@ -75,6 +79,22 @@ watch([() => props.filterType, () => props.tvOrMovies], async ([newFilterType, n
 const displayedShows = computed(() => {
   return showAll.value ? data.value : data.value.slice(0, 6);
 });
+
+// Truncate the overview text to fit within the half-height of the image
+const truncatedOverview = (overview) => {
+  const maxLines = 5;
+  const words = overview.split(' ');
+  let truncated = '';
+  let lineCount = 0;
+
+  for (const word of words) {
+    if (lineCount >= maxLines) break;
+    truncated += word + ' ';
+    if (truncated.length >= 40 * lineCount) lineCount++;
+  }
+
+  return truncated.trim() + (lineCount >= maxLines ? '...' : '');
+};
 </script>
 
 <style scoped>
@@ -93,5 +113,10 @@ const displayedShows = computed(() => {
 
 .hover-wrapper:hover .absolute {
   opacity: 1;
+}
+
+.description-box {
+  max-height: 200px; 
+  overflow: hidden;
 }
 </style>
