@@ -5,16 +5,16 @@
       <!-- Handle the case for the 'latest' filter type -->
       <div v-if="props.filterType === 'latest'" class="relative bg-black flex-shrink-0 m-2 hover-wrapper">
         <img :src="`https://image.tmdb.org/t/p/w500${data.poster_path}`" class="w-[200px] transition-opacity duration-300 ease-in-out hover:opacity-40">
-        <div class="absolute top-0 right-0 bg-red-600 text-white p-1 text-sm opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out">{{ data.vote_average.toFixed(1) }}</div>
-        <div class="absolute bottom-0 left-0 right-0 p-2 text-white text-sm opacity-0 hover:opacity-100 transition-all duration-300 ease-in-out bg-black bg-opacity-50 hover:bottom-0" style="height: 65%;">
+        <div class="absolute top-0 right-0 bg-red-600 text-white p-1 text-sm opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out">{{ data.vote_average }}</div>
+        <div class="absolute bottom-0 left-0 right-0 p-2 text-white text-sm opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out bg-black bg-opacity-50">
           {{ data.overview }}
         </div>
       </div>
       <!-- Handle the case for other filter types -->
       <div v-else v-for="(show, index) in displayedShows" :key="show.id" class="relative bg-black flex-shrink-0 m-2 hover-wrapper">
         <img :src="`https://image.tmdb.org/t/p/w500${show.poster_path}`" class="w-[200px] transition-opacity duration-300 ease-in-out hover:opacity-40">
-        <div class="absolute top-0 right-0 bg-red-600 text-white p-1 text-sm opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out">{{ show.vote_average.toFixed(1) }}</div>
-        <div class="absolute bottom-[-65%] left-0 right-0 p-2 text-white text-sm opacity-0 hover:opacity-100 transition-all duration-300 ease-in-out bg-black bg-opacity-50 hover:bottom-0" style="height: 65%;">
+        <div class="absolute top-0 right-0 bg-red-600 text-white p-1 text-sm opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out">{{ show.vote_average }}</div>
+        <div class="absolute bottom-0 left-0 right-0 p-2 text-white text-sm opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out bg-black bg-opacity-50">
           {{ show.overview }}
         </div>
       </div>
@@ -88,14 +88,10 @@ const displayedShows = computed(() => {
 
 .hover-wrapper .absolute {
   opacity: 0;
-  transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .hover-wrapper:hover .absolute {
   opacity: 1;
-}
-
-.hover-wrapper .description {
-  height: 65%;
 }
 </style>
