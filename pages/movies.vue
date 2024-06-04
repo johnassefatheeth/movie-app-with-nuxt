@@ -38,7 +38,7 @@
         <div v-if="movies.length > 0" class="flex flex-wrap">
           <div v-for="movie in movies" :key="movie.id" class="mb-4">
             <!-- <img :src="'https://image.tmdb.org/t/p/w500' + " class="w-[200px] h-auto mr-2 rounded"> -->
-            <MovieCard :imagepath="movie.poster_path" :overview="movie.overview" :movieRating="movie.vote_average"/>
+            <MovieCard :imagepath="movie.poster_path" :overview="movie.overview" :movieRating="movie.vote_average" :movieId="movie.id"/>
             </div>
         </div>
         <div v-else>No results found.</div>
