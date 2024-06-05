@@ -1,7 +1,8 @@
 <template >
     <div class="bg-gradient-to-r from-gray-900 to-black text-white">
       <div v-if="movie" > 
-        <img :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="Movie Poster" class="w-full h-[400px] object-fit">
+        <img :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="Movie Poster" class="w-full h-[400px] object-fit bg-blend-overlay">
+        <div class="w-full h-[400px] bg-black absolute top-0"></div>
 
         <h1 class="text-2xl font-bold font-mono">{{ movie.title }}</h1>
         <p class="font-light w-[300px]">{{ movie.overview }}</p>
