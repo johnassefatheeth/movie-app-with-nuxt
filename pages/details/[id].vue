@@ -1,17 +1,18 @@
-<template>
-    <div>
-      <div v-if="movie">
-        <h1>{{ movie.title }}</h1>
-        <p>{{ movie.overview }}</p>
-        <img :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="Movie Poster">
+<template >
+    <div class="bg-gradient-to-r from-gray-900 to-black text-white">
+      <div v-if="movie" > 
+        <img :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="Movie Poster" class="w-full h-[400px] object-fit">
+
+        <h1 class="text-2xl font-bold font-mono">{{ movie.title }}</h1>
+        <p class="font-light w-[300px]">{{ movie.overview }}</p>
         <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
         <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
         <div v-if="trailer">
-          <h2>Trailer</h2>
+          <h2 class="text-xl">watch Trailer</h2>
           <iframe
             :src="'https://www.youtube.com/embed/' + trailer.key"
-            width="560"
-            height="315"
+            width="700"
+            height="500"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
