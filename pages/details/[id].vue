@@ -1,10 +1,15 @@
 <template >
     <div class="bg-gradient-to-r from-gray-900 to-black text-white">
       <div v-if="movie" > 
-        <img :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="Movie Poster" class="w-full h-[400px] object-fit bg-blend-overlay">
-        <div class="w-full h-[400px] bg-black absolute top-0"></div>
+        {{ movie }}
+        <img :src="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path" alt="Movie Poster" class="w-full h-[400px] object-fit bg-blend-overlay">
+        <!-- <div class="w-full h-[400px] bg-gradient-to-b from-black absolute top-0"></div> -->
 
         <h1 class="text-2xl font-bold font-mono">{{ movie.title }}</h1>
+        <div v-for="gener in movie.genres" :key="movie.genres.id" class="flex w-full bg-black">
+            <div class="bg-gray-700 w-fit m-3 p-2 rounded-lg">{{gener.name}}</div>
+        </div>
+        <!-- {{ movie.genres }} -->
         <p class="font-light w-[300px]">{{ movie.overview }}</p>
         <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
         <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
