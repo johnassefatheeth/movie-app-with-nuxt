@@ -9,7 +9,6 @@
         <div v-for="gener in movie.genres" :key="movie.genres.id" class="flex w-full bg-black">
             <div class="bg-gray-700 w-fit m-3 p-2 rounded-lg">{{gener.name}}</div>
         </div>
-        <!-- {{ movie.genres }} -->
         <p class="font-light w-[300px]">{{ movie.overview }}</p>
         <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
         <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
