@@ -8,7 +8,7 @@
         
         <img :src="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path" alt="Movie Poster" class="w-[500px] mx-12 object-cover float-left">
         <!-- <div class="w-full h-[400px] bg-gradient-to-b from-black absolute top-0"></div> -->
-      <div class="mt-2 w-[500px] float-end h-[500px]">
+      <div class="mt-2 w-[500px] float-end h-[500px] ml-24">
         <div class="flex w-full ">
             <div v-for="gener in movie.genres" :key="movie.genres.id">
             <div class="bg-gray-700 w-fit m-3 p-2 rounded-lg">{{gener.name}}</div>
@@ -16,13 +16,13 @@
         </div>
         
         
-            <p class="font-light">{{ movie.overview }}</p>
-            <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
-            <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
+            <p class="font-light text-2xl">{{ movie.overview }}</p>
+            <p class="text-3xl"><strong>Release Date:</strong> {{ movie.release_date }}</p>
+            <p class="text-3xl"><strong>Rating:</strong> {{ movie.vote_average }}</p>
         </div>
       </div>
         <div v-if="trailer">
-          <h2 class="text-xl">watch Trailer</h2>
+          <h2 class="text-4xl mt-12 ml-24">watch Trailer</h2>
           <iframe
             class="m-6"
             :src="'https://www.youtube.com/embed/' + trailer.key"
