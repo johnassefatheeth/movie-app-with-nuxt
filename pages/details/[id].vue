@@ -3,9 +3,12 @@
       <div v-if="movie"  class="p-12 "> 
         
         <h1 class="text-6xl font-bold font-mono text-center mb-4 ">{{ movie.title }}</h1>
-        <img :src="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path" alt="Movie Poster" class="w-[500px]  object-cover ">
+        <div class="w-full flex">
+
+        
+        <img :src="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path" alt="Movie Poster" class="w-[500px] mx-12 object-cover float-left">
         <!-- <div class="w-full h-[400px] bg-gradient-to-b from-black absolute top-0"></div> -->
-      <div class="mt-2 w-[500px]">
+      <div class="mt-2 w-[500px] float-end h-[500px]">
         <div class="flex w-full ">
             <div v-for="gener in movie.genres" :key="movie.genres.id">
             <div class="bg-gray-700 w-fit m-3 p-2 rounded-lg">{{gener.name}}</div>
@@ -17,6 +20,7 @@
             <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
             <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
         </div>
+      </div>
         <div v-if="trailer">
           <h2 class="text-xl">watch Trailer</h2>
           <iframe
