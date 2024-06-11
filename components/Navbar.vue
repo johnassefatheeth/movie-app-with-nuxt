@@ -37,7 +37,7 @@
           </div>
           <div v-if="searchResults.length > 0" class="absolute bg-white w-[300px] mt-1 rounded-lg shadow-lg">
             <div v-for="result in searchResults" :key="result.id" class="p-2 border-b hover:bg-gray-200">
-              <NuxtLink :to="`/${result.media_type}/${result.id}`">
+              <NuxtLink :to="`details/${result.media_type}/${result.id}`">
                 {{ result.title || result.name }}
               </NuxtLink>
             </div>
