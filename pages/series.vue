@@ -1,7 +1,7 @@
 <template>
     <div class="flex bg-gradient-to-r from-gray-900 to-black min-h-screen">
       <!-- Sidebar -->
-      <div class="p-4 h-screen w-[300px] fixed text-white bg-gradient-to-r from-gray-900 to-black ">
+      <div class="p-4 h-fit pb-24 w-[300px] fixed text-white bg-gradient-to-r from-gray-900 to-black ">
         <h1 class="text-2xl font-semibold mb-4">Discover TV Series</h1>
         <div class="m-4">
           <label for="sortBy" class="m-2">Sort By:</label>
