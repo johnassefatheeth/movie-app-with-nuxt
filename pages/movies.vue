@@ -12,7 +12,6 @@
             <option value="revenue.desc">Revenue</option>
             <option value="original_title.asc">alphabet</option>
             <option value="vote_count.desc">vote</option>
-            <!-- Add more options as needed -->
           </select>
         </div>
         <div class="mb-4 ">
@@ -37,7 +36,6 @@
         <h2 class="text-3xl font-bold mb-4">Results:</h2>
         <div v-if="movies.length > 0" class="flex flex-wrap">
           <div v-for="movie in movies" :key="movie.id" class="mb-4">
-            <!-- <img :src="'https://image.tmdb.org/t/p/w500' + " class="w-[200px] h-auto mr-2 rounded"> -->
             <MovieCard :imagepath="movie.poster_path" :overview="movie.overview" :movieRating="movie.vote_average" :movieId="movie.id"/>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="hover-wrapper">
-        <NuxtLink :to="`/details/${movieId}`"> 
+        <NuxtLink :to="`/details/${type}/${movieId}`"> 
       <img :src="`https://image.tmdb.org/t/p/w500${imagepath}`" class="w-[200px] transition-opacity duration-300 ease-in-out hover:opacity-40 m-4">
       <div class="absolute top-0 right-0 bg-red-600 text-white p-1 text-sm opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out">
         {{ movieRating.toFixed(1) }}
@@ -31,6 +31,11 @@ const props = defineProps({
   movieId: {
     type: Number,
     required: true,
+  },
+  type: {
+    type: String,
+    required: true,
+    default:'movie'
   }
 });
 
