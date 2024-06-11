@@ -16,9 +16,9 @@
           <p class="text-3xl"><strong>Rating:</strong> {{ content.vote_average }}</p>
           <p class="text-3xl"><strong>Status:</strong> {{ content.status }}</p>
           <p class="text-3xl"><strong>Tagline:</strong> {{ content.tagline }}</p>
-          <p class="text-3xl"><strong>Type:</strong> {{ content.type }}</p>
-          <p class="text-3xl"><strong>Number of Seasons:</strong> {{ content.number_of_seasons }}</p>
-          <p class="text-3xl"><strong>Number of Episodes:</strong> {{ content.number_of_episodes }}</p>
+          <p v-if="type=='tv'" class="text-3xl"><strong>Type:</strong> {{ content.type }}</p>
+          <p v-if="type=='tv'" class="text-3xl"><strong>Number of Seasons:</strong> {{ content.number_of_seasons }}</p>
+          <p v-if="type=='tv'" class="text-3xl"><strong>Number of Episodes:</strong> {{ content.number_of_episodes }}</p>
         </div>
       </div>
       <div class="flex flex-wrap w-full ">
