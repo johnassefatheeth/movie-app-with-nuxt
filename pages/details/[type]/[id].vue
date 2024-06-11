@@ -3,8 +3,8 @@
     <div v-if="content" class="p-12">
       <h1 class="text-6xl font-bold font-mono text-center mb-4">{{ content.title || content.name }}</h1>
       <div class="w-full flex">
-        <img :src="'https://image.tmdb.org/t/p/w500' + content.backdrop_path" alt="Backdrop" class="w-[500px] mx-12 object-cover float-left">
-        <div class="mt-2 w-[500px] float-end h-[500px] ml-24">
+        <img :src="'https://image.tmdb.org/t/p/w500' + content.backdrop_path" alt="Backdrop" class="w-[500px] mx-12  float-left">
+        <div class="mt-2 w-[500px] float-end ml-24">
           <div class="flex w-full">
             <div v-for="genre in content.genres" :key="genre.id">
               <div class="bg-gray-700 w-fit m-3 p-2 rounded-lg">{{ genre.name }}</div>

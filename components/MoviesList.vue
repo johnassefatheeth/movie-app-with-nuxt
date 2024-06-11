@@ -8,12 +8,12 @@
             
             <Lister filterType="popular"  tvOrMovies="movie"/>
 
-            <div class="flex w-full  p-2">         
-                Top
+            <!-- <div class="flex w-full  p-2">         
+                latest
                 <hr class="m-4 w-full border-1 border-white mt-4">
             </div>
 
-            <Lister filterType="latest" tvOrMovies="movie"/>
+            <Lister filterType="latest" tvOrMovies="movie"/> -->
             <div class="flex w-full  p-2">         
                 Top Rated
                 <hr class="m-4 w-full border-1 border-white mt-4">
