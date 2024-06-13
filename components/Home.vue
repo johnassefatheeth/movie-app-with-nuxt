@@ -13,8 +13,8 @@
         <img :src="'https://image.tmdb.org/t/p/w1280' + movie.poster_path" class="w-full h-full object-cover opacity-40">
       </swiper-slide>
     </swiper>
-    <div class="absolute top-0 z-10 w-full h-screen bg-opacity-25 bg-black  flex justify-center items-center sm:flex-col">
-      <div class="mr-52 m-4 text-white font-extrabold text-8xl sm:text-6xl text-center w-1/2 h-full flex justify-center items-center backdrop-blur-sm sm:h-fit sm:mr-0 sm:mb-4">
+    <div class="absolute top-0 z-10 w-full h-screen bg-opacity-25 bg-black  flex justify-center items-center flex-col">
+      <div class="m-4 text-white font-extrabold text-6xl  text-center w-1/2  flex justify-center items-center backdrop-blur-sm  sm:mr-0">
         FIND WHAT YOU'RE MISSING ON
       </div>
       <button class="w-[200px] h-[50px] m-4 bg-orange-700 rounded-full font-bold text-white lg:text-2xl lg:w-[300px] lg:h-[80px]">
