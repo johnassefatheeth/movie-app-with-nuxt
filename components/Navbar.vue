@@ -1,6 +1,5 @@
 <template>
   <div
-    @mouseleave="hoverOnBrowse = false"
     class="absolute opacity-80 z-20 w-full p-2 lg:h-20 bg-gray-800 top-0 transition-all duration-700  hover:opacity-100 "
   >
     <div class="w-1/5 h-20 float-left">
@@ -40,7 +39,6 @@
     </div>
     <ul class="flex flex-col justify-evenly items-center lg:h-full float-right mr-4 lg:flex-row transition-all duration-200" :class="isMenuOpen?'h-full':'h-0 overflow-clip'">
       <li
-        @mouseover="hoverOnBrowse = false"
         class="hover:text-white transition-all duration-300 ease-in-out m-4 mr-8"
       >
         <NuxtLink to="/" class="text-gray-300 hover:text-white transition-all duration-300 ease-in-out">HOME</NuxtLink>
@@ -85,7 +83,6 @@ import axios from 'axios';
 
 const searchQuery = ref('');
 const searchResults = ref([]);
-const hoverOnBrowse = ref(false);
 const isMenuOpen = ref(false);
 
 const searchContent = async () => {
