@@ -37,7 +37,7 @@
           </svg>
           
     </div>
-    <ul class="flex flex-col justify-evenly items-center lg:h-full float-right mr-4 lg:flex-row transition-all duration-200" :class="isMenuOpen?'h-full':'h-0 overflow-clip'">
+    <ul class="flex flex-col justify-evenly items-center lg:h-full float-right mr-4 lg:flex-row transition-all duration-200 lg:overflow-visible" :class="isMenuOpen?'h-full':'h-0 overflow-clip'">
       <li
         class="hover:text-white transition-all duration-300 ease-in-out m-4 mr-8"
       >
