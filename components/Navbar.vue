@@ -6,6 +6,9 @@
     <div class="w-1/5 h-20 float-left">
       <!-- <img class="h-full ml-4" src="../assets/image/food.png" alt=""> -->
     </div>
+    <div class="m-4 lg:hidden">
+      hambuger
+    </div>
     <ul class="flex justify-evenly items-center h-full float-right mr-4">
       <li
         @mouseover="hoverOnBrowse = false"
@@ -53,6 +56,8 @@ import axios from 'axios';
 
 const searchQuery = ref('');
 const searchResults = ref([]);
+const hoverOnBrowse = ref(false);
+const isMenuOpen = ref(false);
 
 const searchContent = async () => {
   if (searchQuery.value.length > 2) {
@@ -73,8 +78,16 @@ const searchContent = async () => {
     searchResults.value = [];
   }
 };
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
+const closeMenu = () => {
+  isMenuOpen.value = false;
+};
 </script>
 
 <style scoped>
-/* Add any additional styles here */
+/* Additional styles can be added here */
 </style>
