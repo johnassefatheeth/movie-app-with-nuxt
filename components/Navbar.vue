@@ -1,15 +1,44 @@
 <template>
   <div
     @mouseleave="hoverOnBrowse = false"
-    class="absolute opacity-80 z-20 w-full h-20 bg-gray-800 top-0 transition-all duration-300 ease-in-out hover:opacity-100"
+    class="absolute opacity-80 z-20 w-full p-2 lg:h-20 bg-gray-800 top-0 transition-all duration-700  hover:opacity-100 "
   >
     <div class="w-1/5 h-20 float-left">
       <!-- <img class="h-full ml-4" src="../assets/image/food.png" alt=""> -->
     </div>
-    <div class="m-4 lg:hidden">
-      hambuger
+    <div class="m-8 lg:hidden float-end transition-all duration-700" @click="toggleMenu">
+      
+      <svg v-if="!isMenuOpen"
+            class="w-6 h-6"
+            fill="#ffffff"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+          <svg v-else
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+          
     </div>
-    <ul class="flex justify-evenly items-center h-full float-right mr-4">
+    <ul class="flex flex-col justify-evenly items-center lg:h-full float-right mr-4 lg:flex-row transition-all duration-200" :class="isMenuOpen?'h-full':'h-0 overflow-clip'">
       <li
         @mouseover="hoverOnBrowse = false"
         class="hover:text-white transition-all duration-300 ease-in-out m-4 mr-8"
@@ -83,9 +112,6 @@ const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
 
-const closeMenu = () => {
-  isMenuOpen.value = false;
-};
 </script>
 
 <style scoped>
